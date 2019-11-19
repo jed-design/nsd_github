@@ -164,8 +164,8 @@ def time_stats(df):
 	Before we do anythng else, we change the time format of the df to time stamp.	
 	**************************************************************************   """
 	
-    df['Start Time'] = pd.to_datetime(df['Start Time'])		#time convertion 
-    df['End Time'] = pd.to_datetime(df['End Time'])      	#time convertion 
+    df['Start Time'] = pd.to_datetime(df['Start Time'])		# time convertion 
+    df['End Time'] = pd.to_datetime(df['End Time'])      	# time convertion 
 	
     print('\nCalculating The Most Frequent Times of Travel...')
     print("." + "."*78)
@@ -176,14 +176,14 @@ def time_stats(df):
     df['month'] = df['Start Time'].dt.month  # we make this new month column anyway. Might be nice to have
     if month == 'all':
         month_names = ['January', 'Februry', 'Mars', 'April', 'May', 'June']
-        popular_month = df['month'].value_counts().idxmax()  # this picks the most popular month
-        popular_month_name = month_names[popular_month - 1]		# this matches the month name with the month number.
-        print("Most popular month in {} was: ".format(city) ,popular_month_name)
+        popular_month = df['month'].value_counts().idxmax()  	# this picks the most popular month
+        popular_month_name = month_names[popular_month - 1]	# this matches the month name with the month number.
+        print("Most popular month in {} was: ".format(city), popular_month_name)
     else: 
         print("Most popular month: You have choosen to look only in month", month)
 	
     # TO DO: display the most common day of week.  This is for obvious reasons only done if _all_ days has been choosen.
-    df['day_of_week'] = df['Start Time'].dt.weekday_name  # we make this day_of_week column anyway
+    df['day_of_week'] = df['Start Time'].dt.weekday_name  	# we make this day_of_week column anyway
 	
     if day == 'All':
         popular_day = df['day_of_week'].value_counts().idxmax()	# This picks the moste popular day.
@@ -193,16 +193,16 @@ def time_stats(df):
 
     # TO DO: display the most common start hour
     df['hour'] =  df['Start Time'].dt.hour
-    popular_hour = df['hour'].value_counts().idxmax()  # This picks the most popular hour.
-    print("Most poplar start hour for you selection was: ", popular_hour)
+    popular_hour = df['hour'].value_counts().idxmax()  		# This picks the most popular hour.
+    print("Most poplar start hour for your selection was: ", popular_hour)
 	
-	# *** This shows raw data, if rawdata switch is "on"
+    # *** This shows raw data, if rawdata switch is "on"
     if rawdata == "on":
         print("."*78)
-        print("\n Some Raw Data: \n", df.head(7), "\n")  # print 7 raws of raw data
+        print("\n Some Raw Data: \n", df.head(7), "\n")  	# print 7 raws of raw data
         print("."*78)
 	
-	# This below shows how long time it took to proess this function.
+    # This below shows how long time it took to proess this function.
     print("-" + "-"*50)
     print("This took %s seconds." % round((time.time() - start_time), 3), "to process.") 
     print("-" + "-"*78)

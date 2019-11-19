@@ -3,6 +3,10 @@
 ### **************************************
 2019-11-18:
 Dut to the use of an old laptop with swedish keybord, a ghost branch with swedish letters Å was created due to a typo. This branch is now deleted, but a lot of fuzz on the way to get rid of it.
+
+2019-11-19:
+Latest update! Please note this may not be the same bikeshare.py file that was sent in to Udacity in previous prject. The file may work, or way not. 
+
 ___________________________________________________________________________________
 
 ### 2019-11-18

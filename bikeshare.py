@@ -69,18 +69,18 @@ def get_filters():
         print("You had one task; Type 0, 1 or 2. Nothing else. \n -Try again")
         num = input("Select your city: ")
     else: 
-        city = cities[int(num)]				# this picks the city from the list a few lines up here...
-        df = pd.read_csv(CITY_DATA[city])   # This picks the .csv file for the city.
+        city = cities[int(num)]			# this picks the city from the list a few lines up here...
+        df = pd.read_csv(CITY_DATA[city])  	# This picks the .csv file for the city.
 
     # TO DO: get user input for month (all, january, february, ... , june)
-	# We first state a list of valid inputs. 
+    # We first state a list of valid inputs. 
     list_of_months = ['all', 'january', 'februry', 'mars', 'april', 'may', 'june']
 
     print("\nNow, type the month you want. Choose from januari to june.")	   # instruktion of wath to input.
     print("You can also choose to watch results from all months. Then, type all: \n")
     month = input("Type the month: ").lower()		
 
-	# Check loop to if the value is valid. If it is not, the user have to make a new try.
+	# Check loop however the value is valid. If it is not, the user have to make a new try.
     while month not in list_of_months:			
         print("You better type a valid month! Try again: \n")
         month = input("Type the month: ").lower()
@@ -92,17 +92,17 @@ def get_filters():
     list_of_days = ['all', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday']
 	
     print("\nNow, type the Day of the Week you want. Choose from sunday to saturday.")
-    print("You can also choose to watch results from whole week. Then, type all: \n")
+    print("You can also choose to watch results for whole week. Then, type all: \n")
     day = input("Type the Day of the Week: ").lower()
 
 	# While loop that checks if the inputde value is valid.
     while day not in list_of_days:
-        print("Please type a valid day! Try again: \n")
+        print("Please type a valid weekday! Try again: \n")
         day = input("Type the Day of the Week: ").lower()
     else:
         print("You selected day :", day)
     
-    day = day.title()  # fix big letter in front of dayname.
+    day = day.title()  		# fix big letter in front of dayname.
 
 	# Print a little message to the user to of what is seleted. 
     print("+" + "-"*78)

@@ -20,16 +20,16 @@ rawdata = "on"   # this is a switch that is used for showing raw data. It can be
 # ***********************************************************************************************
 
 
-def raw_data_switch():  # this function switches on and off the viewing of raw data. Default is on.
-    global rawdata 
-    if rawdata == "on":
-        s = "1"
-    elif rawdata == "off":
-        s = "0"
-    if s == "1":
-        rawdata = "off"
-    elif s == "0":
-        rawdata = "on"
+def raw_data_switch():  	# this function switches on and off the viewing of raw data. Default is on.
+    global rawdata 		# creates the (global) variable "rawdata". 
+    if rawdata == "on":		# Check if rawdata is on or not	
+        s = "1"			# If it is, set "s" to 1
+    elif rawdata == "off":	# 	
+        s = "0"			# If not; s = 0	
+    if s == "1":		# If rawdata is "on", s = 1. So rawdata must be switched to "off"
+        rawdata = "off"		#
+    elif s == "0":		# If rawdata was off, it is now switched on!
+        rawdata = "on"		#
  
     selector(df)
 # ***********************************************************************************************

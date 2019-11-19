@@ -131,9 +131,9 @@ def load_data(city, month, day):
 	# We change the "Start time" into datetime format and make a new column, csv_month with
 	# month. This is used for filtering.
 	
-    df['Start Time'] = pd.to_datetime(df['Start Time'])		#time convertion 
-    df['End Time'] = pd.to_datetime(df['End Time']) 		#time convertion     
-    df['csv_month'] =  df['Start Time'].dt.month    # create a new column with the month
+    df['Start Time'] = pd.to_datetime(df['Start Time'])		# time convertion 
+    df['End Time'] = pd.to_datetime(df['End Time']) 		# time convertion     
+    df['csv_month'] =  df['Start Time'].dt.month    		# create a new column with the month
 	
 	# **************************************************************************
         
@@ -142,15 +142,15 @@ def load_data(city, month, day):
     if month != 'all':
         # We need a number for the month. The number is given from the position in the list. 
         month_list = ['january', 'februry', 'mars', 'april', 'may', 'june']
-        month_index = month_list.index(month) + 1 	# get a number from the list correponding to month
+        month_index = month_list.index(month) + 1 			# get a number from the list correponding to month
         months_to_drop = df.loc[df['csv_month'] != month_index].index   # making a list of rows to drop
-        df.drop(months_to_drop, inplace=True)   # drop the rows	
+        df.drop(months_to_drop, inplace=True)  				# drop the rows	
    
-    df['day_of_week'] = df['Start Time'].dt.weekday_name   # make a column with weekdays
+    df['day_of_week'] = df['Start Time'].dt.weekday_name   		# make a column with weekdays
 		
     # Filtering the days. All days that are not selected will be dropped.
     if day != 'All':
-        days_to_drop = df.loc[df['day_of_week'] != day].index # listing the row lines of days to drop
+        days_to_drop = df.loc[df['day_of_week'] != day].index 		# listing the row lines of days to drop
         df.drop(days_to_drop, inplace=True)   
     
     return df
